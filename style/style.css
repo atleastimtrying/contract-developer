@@ -4,19 +4,22 @@
 }
 html{
   height:100%;
-  background:#333;
+  background:#ccc;
   font-family:courier, monotype;
 }
 body{
-  background:#fff;
-  padding: 0 10px;
+  background:#fff; 
+  margin:0 auto;
+  max-width:1024px;
 }
+
 header{
   padding:16px;
   padding-bottom:0;
-  background:#aaa;
-  background-image:url(../images/light_toast.png);
+  position:relative;
+  z-index:10;
 }
+
 header h1,
 header h2{
   margin-bottom: 10px;
@@ -24,8 +27,9 @@ header h2{
 }
 
 nav{
-  margin:10px 0;
+  margin-top:10px;
 }
+
 header nav a{
   text-decoration:none;
   padding:10px;
@@ -34,44 +38,49 @@ header nav a{
   border-top-left-radius:3px;
   border-top-right-radius:3px;
   display:inline-block;
-  -webkit-transition:color, background-color 0.5s ease-in;  
-  -moz-transition:color, background-color 0.5s ease-in;
-  -o-transition:color, background-color 0.5s ease-in;
-  transition:color, background-color 0.5s ease-in;
+  border-bottom:1px solid orange;
+  margin-bottom:-1px;
 }
 
-header nav a:hover{
-  background:#333;
-  color:white;
-}
+
 header nav a.active{
-  background:white;
-  color:orange;
+  background:#f0f0f0;
+  border:1px solid orange;
+  border-bottom-color:#f0f0f0;
 }
+
 article{
   padding:16px;
-  padding-right: 196px;
-  min-width:220px;
-  margin: 0 auto;
-  margin-bottom: 16px;
+  padding-right: 212px;
   background:#f0f0f0;
-  border-radius:4px;
+  border-top:1px solid orange;
+  position:relative;
+  z-index:0;
 }
+
 section{
   border: 1px solid #ccc;
   padding:16px;
-  border-radius:2px;
+  border-radius:4px;
   margin-bottom:16px;
 }
+
+article section:last-of-type{
+  margin-bottom:0;
+}
+
 section h2{
 
 }
+
 aside{
-  float:right;
+  position:absolute;
+  top:16px;
+  right:16px;
   width:150px;
   padding:15px;
   background:white;
-  border-bottom-left-radius: 4px;
+  border-radius: 4px;
 }
 footer{
   padding: 14px;
@@ -88,25 +97,25 @@ footer a{
 .hidden{
   display:none;
 }
-@media all and (max-width: 500px){
-  header{
-    margin:0;
+
+@media all and (max-width: 410px){
+  nav a{
+    max-width:40%;
   }
-  header input{
-    display:block;
+}
+
+@media all and (max-width: 775px){
+  article section:last-of-type{
+    margin-bottom:16px;
+  }
+  aside{
+    position:relative;
+    top:0;
+    right:0;
     width:auto;
   }
-  article{}
-  article ul li{
-    list-style:none;
-    display:block;
-  }
-  article ul li a{
-    padding:16px;
-    display:block;
-    min-height:0;
-    width:auto;
-    margin: 0 0 4px 0;
+  article{
+    padding-right:16px;
   }
 }
 
