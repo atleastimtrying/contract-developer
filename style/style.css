@@ -74,8 +74,9 @@ article section:last-of-type{
 section h2{
   margin-bottom:20px;
 }
-section p{
+p{
   margin-bottom:16px;
+  line-height:20px;
 }
 section ol li{
   margin-left:24px;
